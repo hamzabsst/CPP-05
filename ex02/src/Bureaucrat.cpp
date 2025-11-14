@@ -6,12 +6,12 @@
 /*   By: hbousset <hbousset@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:11:54 by hbousset          #+#    #+#             */
-/*   Updated: 2025/11/14 23:31:06 by hbousset         ###   ########.fr       */
+/*   Updated: 2025/11/14 23:34:34 by hbousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "../inc/Bureaucrat.hpp"
+#include "../inc/AForm.hpp"
 
 const char * Bureaucrat::GradeTooHighException::what() const throw()
 {
@@ -41,7 +41,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 }
 Bureaucrat::~Bureaucrat(){}
 
-const std::string&	Bureaucrat::getName() const{return _name;}
+const std::string&	Bureaucrat::getName() const {return _name;}
 int					Bureaucrat::getGrade() const {return _grade;}
 
 void	Bureaucrat::incGrade()
@@ -63,7 +63,7 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
 	return os;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(AForm& form)
 {
 	try
 	{
@@ -73,6 +73,20 @@ void Bureaucrat::signForm(Form& form)
 	catch (const std::exception& e)
 	{
 		std::cout << _name << " couldn't sign " << form.getName()
+				  << " because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(const AForm& form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << _name << " couldn't execute " << form.getName()
 				  << " because " << e.what() << std::endl;
 	}
 }

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbousset <hbousset@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 16:10:38 by hbousset          #+#    #+#             */
-/*   Updated: 2025/11/14 23:30:03 by hbousset         ###   ########.fr       */
+/*   Created: 2025/11/14 23:03:23 by hbousset          #+#    #+#             */
+/*   Updated: 2025/11/14 23:40:42 by hbousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#pragma once
 
-int main()
+#include "AForm.hpp"
+#include <fstream>
+
+class ShrubberyCreationForm : public AForm
 {
-	try
-	{
-		Bureaucrat a("Alice", 2);
-		std::cout << a << std::endl;
-		a.incGrade();
-		std::cout << a << std::endl;
-		a.incGrade();
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Caught: " << e.what() << std::endl;
-	}
-	return 0;
-}
+	private:
+		std::string _target;
+	public:
+		ShrubberyCreationForm(const std::string& target);
+		ShrubberyCreationForm(const ShrubberyCreationForm& other);
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
+		~ShrubberyCreationForm();
+		void executeAction() const;
+};

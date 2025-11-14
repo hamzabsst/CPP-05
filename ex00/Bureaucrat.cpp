@@ -6,7 +6,7 @@
 /*   By: hbousset <hbousset@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:11:54 by hbousset          #+#    #+#             */
-/*   Updated: 2025/11/14 22:49:48 by hbousset         ###   ########.fr       */
+/*   Updated: 2025/11/14 23:30:51 by hbousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 
 Bureaucrat::~Bureaucrat(){}
 
-const std::string&	Bureaucrat::getName() const
-{
-	return _name;
-}
-
-int		Bureaucrat::getGrade() const
-{
-	return _grade;
-}
+const std::string&	Bureaucrat::getName() const{return _name;}
+int					Bureaucrat::getGrade() const {return _grade;}
 
 void	Bureaucrat::incGrade()
 {

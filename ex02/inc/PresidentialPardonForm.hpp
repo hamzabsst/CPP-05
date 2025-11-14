@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbousset <hbousset@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 16:10:38 by hbousset          #+#    #+#             */
-/*   Updated: 2025/11/14 23:30:03 by hbousset         ###   ########.fr       */
+/*   Created: 2025/11/14 23:03:14 by hbousset          #+#    #+#             */
+/*   Updated: 2025/11/14 23:10:20 by hbousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#pragma once
 
-int main()
+#include "AForm.hpp"
+
+class PresidentialPardonForm : public AForm
 {
-	try
-	{
-		Bureaucrat a("Alice", 2);
-		std::cout << a << std::endl;
-		a.incGrade();
-		std::cout << a << std::endl;
-		a.incGrade();
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Caught: " << e.what() << std::endl;
-	}
-	return 0;
-}
+	private:
+		std::string _target;
+	public:
+		PresidentialPardonForm(const std::string& target);
+		PresidentialPardonForm(const PresidentialPardonForm& other);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
+		~PresidentialPardonForm();
+		void executeAction() const;
+};

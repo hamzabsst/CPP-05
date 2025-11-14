@@ -6,7 +6,7 @@
 /*   By: hbousset <hbousset@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:11:46 by hbousset          #+#    #+#             */
-/*   Updated: 2025/11/14 22:29:11 by hbousset         ###   ########.fr       */
+/*   Updated: 2025/11/14 23:30:16 by hbousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <exception>
 
 class Form;
-
 class Bureaucrat
 {
 	private:
