@@ -6,7 +6,7 @@
 /*   By: hbousset <hbousset@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:10:38 by hbousset          #+#    #+#             */
-/*   Updated: 2025/11/14 23:30:03 by hbousset         ###   ########.fr       */
+/*   Updated: 2025/11/15 00:24:25 by hbousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	try
 	{
-		Bureaucrat a("Alice", 2);
+		Bureaucrat a("Meryem", 2);
 		std::cout << a << std::endl;
 		a.incGrade();
 		std::cout << a << std::endl;
